@@ -1,0 +1,81 @@
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+env/
+
+# CLIP和BLIP模型文件
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+
+# CLIP-Interrogator缓存目录
+.cache/
+.clip_interrogator_cache/
+clip_interrogator_cache/
+interrogator_cache/
+.interrogator/
+
+# 模型下载目录
+models/
+pretrained/
+weights/
+checkpoints/
+.torch/
+.cache/torch/
+.cache/huggingface/
+
+# 临时文件
+.temp/
+tmp/
+temp/
+*.tmp
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Streamlit
+.streamlit/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# 视频和图像样本（可选，如果不想包含示例文件）
+samples/
+examples/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.gif 

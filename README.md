@@ -1,15 +1,15 @@
-```yaml
-title: Vid2Prompt
-emoji: 👀
-colorFrom: yellow
-colorTo: indigo
-sdk: gradio
-sdk_version: 5.35.0
-app_file: app.py
-pinned: false
-license: mit
-short_description: 'Vid2Prompt is a tool for analyzing AI-generated videos. '
-```
+## 🔧 Project Info
+
+| Key             | Value                                                   |
+| --------------- | ------------------------------------------------------- |
+| **Title**       | Vid2Prompt                                              |
+| **Emoji**       | 👀                                                      |
+| **Color**       | Yellow → Indigo                                         |
+| **SDK**         | Gradio v5.35.0                                          |
+| **App File**    | app.py                                                  |
+| **Pinned**      | false                                                   |
+| **License**     | MIT                                                     |
+| **Description** | Vid2Prompt is a tool for analyzing AI-generated videos. |
 
 # Vid2Prompt - AI Video Prompt Analysis Tool
 
@@ -18,15 +18,14 @@ short_description: 'Vid2Prompt is a tool for analyzing AI-generated videos. '
 ## Features
 
 - Automatically extracts 3–5 keyframes from the video
-  
+
 - Uses CLIP-Interrogator to generate detailed text for each frame
-  
+
 - Aggregates the results to form a comprehensive prompt
-  
+
 - Infers the likely AI model based on visual and textual features
-  
+
 - Simple and intuitive Streamlit interface
-  
 
 ## Installation
 
@@ -43,24 +42,22 @@ Then open the displayed address in your browser (usually [http://localhost:8501]
 ## Requirements
 
 - Python 3.8+
-  
+
 - GPU recommended for faster processing
-  
+
 - Minimum 4GB RAM (8GB+ recommended with GPU)
-  
 
 ## Tech Stack
 
 - Streamlit
-  
+
 - OpenCV
-  
+
 - CLIP-Interrogator
-  
+
 - PyTorch
-  
+
 - NumPy
-  
 
 ---
 
@@ -74,15 +71,14 @@ Then open the displayed address in your browser (usually [http://localhost:8501]
 #### 功能特点
 
 - 自动从视频中提取3~5帧关键图像
-  
+
 - 使用 CLIP-Interrogator 分析每一帧并生成详细文本描述
-  
+
 - 汇总分析结果，生成综合性提示词
-  
+
 - 根据图像特征与文本，推测可能使用的生成模型
-  
+
 - 提供简洁友好的 Streamlit 界面
-  
 
 #### 安装方法
 
@@ -95,7 +91,7 @@ pip install -r requirements.txt
 #### 使用方法
 
 ```bash
-`streamlit run app.py
+streamlit run app.py
 ```
 
 在浏览器中访问显示的地址（通常是 [http://localhost:8501）。](http://localhost:8501%EF%BC%89%E3%80%82)
@@ -103,24 +99,22 @@ pip install -r requirements.txt
 #### 系统要求
 
 - Python 3.8+
-  
+
 - 建议使用 GPU 加速
-  
+
 - 至少 4GB 内存（GPU 推荐 8GB 以上）
-  
 
 #### 技术栈
 
 - Streamlit
-  
+
 - OpenCV
-  
+
 - CLIP-Interrogator
-  
+
 - PyTorch
-  
+
 - NumPy
-  
 
 </details>
 
@@ -136,15 +130,14 @@ pip install -r requirements.txt
 #### 特徴
 
 - 動画から3～5枚のキーフレームを自動抽出
-  
+
 - CLIP-Interrogatorで各フレームを分析し、詳細なテキストを生成
-  
+
 - 結果をまとめて総合的なプロンプトを生成
-  
+
 - 画像とテキストの特徴から生成モデルを推測
-  
+
 - 直感的なStreamlitインターフェースを提供
-  
 
 #### インストール手順
 
@@ -159,24 +152,22 @@ pip install -r requirements.txt
 #### 動作環境
 
 - Python 3.8以上
-  
+
 - CLIPの処理を高速化するためにGPU推奨
-  
+
 - メモリ4GB以上（GPU使用時は8GB以上推奨）
-  
 
 #### 技術スタック
 
 - Streamlit
-  
+
 - OpenCV
-  
+
 - CLIP-Interrogator
-  
+
 - PyTorch
-  
+
 - NumPy
-  
 
 </details>
 

@@ -4,6 +4,7 @@ from typing import List, Dict, Any
 import torch
 from clip_interrogator import Config, Interrogator
 import re
+import string
 
 # 初始化CLIP Interrogator
 def get_interrogator():
@@ -46,10 +47,55 @@ def analyze_frame(frame: np.ndarray) -> str:
     try:
         # 使用CLIP Interrogator生成描述
         prompt = ci.interrogate(image)
+        # 清理和规范化提示词
+        prompt = clean_prompt(prompt)
         return prompt
     except Exception as e:
         print(f"分析图像时出错: {str(e)}")
         return "无法分析图像"
+
+def clean_prompt(prompt: str) -> str:
+    """
+    清理和规范化提示词，移除非英语词汇和不相关内容
+    
+    参数:
+        prompt: 原始提示词
+        
+    返回:
+        清理后的提示词
+    """
+    # 转换为小写
+    prompt = prompt.lower()
+    
+    # 移除非英语词汇和常见噪声词
+    noise_words = {
+        "très", "détaillé", "megalophoba", "midlands", "grape", "8 h", "tiktok",
+        "megalophobia", "detailed", "highly detailed", "ultra detailed",
+        "trending on artstation", "trending", "artstation", "instagram", "pinterest",
+        "facebook", "twitter", "deviantart", "unsplash", "flickr", "500px",
+        "award winning", "award-winning", "hd", "4k", "8k", "uhd", "hdr",
+        "unreal engine", "unity", "blender", "octane render", "cycles", "ray tracing"
+    }
+    
+    # 分割提示词
+    parts = [p.strip() for p in prompt.split(",")]
+    
+    # 过滤掉噪声词和非英语词
+    filtered_parts = []
+    for part in parts:
+        words = part.split()
+        if not any(word in noise_words for word in words) and all(c in string.printable for c in part):
+            filtered_parts.append(part)
+    
+    # 重新组合提示词
+    cleaned_prompt = ", ".join(filtered_parts)
+    
+    # 确保提示词不为空
+    if not cleaned_prompt:
+        # 如果过滤后为空，至少保留第一部分
+        cleaned_prompt = parts[0] if parts else "image"
+    
+    return cleaned_prompt
 
 def analyze_frames(frames: List[np.ndarray]) -> List[str]:
     """
@@ -130,7 +176,9 @@ def generate_combined_prompt(prompts: List[str]) -> str:
     # 统计风格词频率
     style_freq = {}
     for word in style_words:
-        style_freq[word] = style_freq.get(word, 0) + 1
+        # 确保只包含英文单词
+        if all(c in string.printable for c in word):
+            style_freq[word] = style_freq.get(word, 0) + 1
     
     # 按频率排序风格词
     sorted_styles = sorted(style_freq.items(), key=lambda x: x[1], reverse=True)
@@ -143,9 +191,11 @@ def generate_combined_prompt(prompts: List[str]) -> str:
     top_keywords = [word for word, freq in sorted_keywords[:15]]
     
     # 3. 添加最常见的风格词（最多5个）
-    top_styles = [style for style, freq in sorted_styles[:5]]
+    top_styles = [style for style, freq in sorted_styles[:5] if all(c in string.printable for c in style)]
     
     # 组合最终提示词
-    combined = f"{base_description}, {', '.join(top_keywords)}, {', '.join(top_styles)}"
+    combined = f"{base_description}, {', '.join(top_keywords)}"
+    if top_styles:
+        combined += f", {', '.join(top_styles)}"
     
     return combined 

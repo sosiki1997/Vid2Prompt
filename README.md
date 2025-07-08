@@ -63,6 +63,15 @@ Then open the displayed address in your browser (usually [http://localhost:8501]
 - NumPy
 
 ---
+### 🔍 Demo Preview
+
+Here's a quick look at the tool in action:
+![Preview](./assets/2025-07-08 22.19.37.png)
+![Preview](./assets/2025-07-08 22.20.01.png)
+![Preview](./assets/2025-07-08 22.20.10.png)
+![Preview](./assets/2025-07-08 22.20.29.png)
+
+
 
 <details>
 <summary>🌏 简体中文</summary>

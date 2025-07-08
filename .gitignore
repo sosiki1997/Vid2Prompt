@@ -78,5 +78,5 @@ examples/
 *.mkv
 *.jpg
 *.jpeg
-*.png
+# *.png
 *.gif 

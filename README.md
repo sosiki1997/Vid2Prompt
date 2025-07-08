@@ -37,6 +37,9 @@ pip install -r requirements.txt
 
 ## Usage
 
+```bash
+streamlit run app.py
+```
 Then open the displayed address in your browser (usually [http://localhost:8501](http://localhost:8501)).
 
 ## Requirements

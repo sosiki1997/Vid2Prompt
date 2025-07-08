@@ -66,10 +66,10 @@ Then open the displayed address in your browser (usually [http://localhost:8501]
 ### 🔍 Demo Preview
 
 Here's a quick look at the tool in action:
-![Preview](./assets/2025-07-08 22.19.37.png)
-![Preview](./assets/2025-07-08 22.20.01.png)
-![Preview](./assets/2025-07-08 22.20.10.png)
-![Preview](./assets/2025-07-08 22.20.29.png)
+![Preview](./assets/preview1.png)
+![Preview](./assets/preview2.png)
+![Preview](./assets/preview3.png)
+![Preview](./assets/preview4.png)
 
 
 

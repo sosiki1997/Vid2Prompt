@@ -30,6 +30,9 @@
 ## Installation
 
 ```bash
+conda create -n vid_venv python=3.9 -y
+conda activate vid_venv
+
 git clone https://github.com/yourusername/Vid2Prompt.git 
 cd Vid2Prompt 
 pip install -r requirements.txt
@@ -63,13 +66,7 @@ Then open the displayed address in your browser (usually [http://localhost:8501]
 - NumPy
 
 ---
-### 🔍 Demo Preview
 
-Here's a quick look at the tool in action:
-![Preview](./assets/preview1.png)
-![Preview](./assets/preview2.png)
-![Preview](./assets/preview3.png)
-![Preview](./assets/preview4.png)
 
 
 
@@ -184,3 +181,12 @@ streamlit run app.py
 </details>
 
 </details>
+
+### 🔍 Demo Preview
+
+以下は実際に使ってみたときの画面です。
+
+![Preview](./assets/preview1.png)
+![Preview](./assets/preview2.png)
+![Preview](./assets/preview3.png)
+![Preview](./assets/preview4.png)
